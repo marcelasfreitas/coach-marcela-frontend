@@ -131,7 +131,24 @@ textarea, input { font-family: inherit; font-size: var(--fs-base); }
 .tab.active { background: var(--ac); color: #000; font-weight: 800; box-shadow: 0 2px 8px rgba(245,158,11,.3); }
 .page { display: none; padding: var(--pad) var(--pad) 40px; }
 .page.active { display: block; animation: fu .22s ease; }
-@keyframes fu { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+@media (max-width: 600px) {
+  :root {
+    --pad: clamp(12px, 3vw, 18px);
+    --gap: clamp(6px, 1vw, 10px);
+    --fs-xs: 11px;
+    --fs-sm: 13px;
+    --fs-base: 15px;
+    --fs-md: 16px;
+    --fs-lg: 18px;
+    --fs-xl: 22px;
+    --fs-2xl: 28px;
+    --fs-timer: 48px;
+  }
+  .tab { padding: 10px 4px; font-size: 14px; }
+  .hdr { padding: 10px var(--pad); }
+  .cbanner { flex-direction: column; gap: 12px; }
+  .ccora { font-size: var(--fs-sm); max-width: 100%; }
+}
 #pg-coach { display: none; flex-direction: column; padding: 0; height: 100%; }
 #pg-coach.active { display: flex; }
 .card {
@@ -462,7 +479,7 @@ const DEFAULT_SUBJS=[{name:'Português',pct:0},{name:'Raciocínio Lógico',pct:0
 let S={sessions:[],totalMin:0,provaDate:null,metaMin:60,notifOn:false,nightMode:false,chatHistory:[],subjects:JSON.parse(JSON.stringify(DEFAULT_SUBJS))};
 let T={dur:25,rem:1500,total:1500,running:false,paused:false,iv:null,pomo:0,task:'sessão de estudos'};
 let selDur=25,recognition=null,isListening=false,notifIv=null;
-function init(){load();updateCD();updateStats();updateGoal();updateCoraBanner();rotateCoraLetter();document.getElementById('initT').textContent=hhmm();if(S.nightMode)applyNight(true);if(S.notifOn&&Notification.permission==='granted'){document.getElementById('notifBtn').classList.add('on');startNotifLoop();}renderSubjs();}
+function init(){load();updateCD();updateStats();updateGoal();updateCoraBanner();rotateCoraLetter();startCoraRotation();document.getElementById('initT').textContent=hhmm();if(S.nightMode)applyNight(true);if(S.notifOn&&Notification.permission==='granted'){document.getElementById('notifBtn').classList.add('on');startNotifLoop();}renderSubjs();}
 function load(){try{const d=localStorage.getItem('coachMarcela6');if(d){const p=JSON.parse(d);S={...S,...p};if(!S.subjects||!S.subjects.length)S.subjects=JSON.parse(JSON.stringify(DEFAULT_SUBJS));}}catch(e){}}
 function save(){localStorage.setItem('coachMarcela6',JSON.stringify(S));}
 function go(name){document.querySelectorAll('.page').forEach(p=>{p.classList.remove('active');p.style.display='none';});document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));const pg=document.getElementById('pg-'+name);const scr=document.getElementById('scroller');if(name==='coach'){pg.style.cssText='display:flex;flex-direction:column;padding:0;height:100%;';pg.classList.add('active');scr.style.cssText='flex:1;overflow:hidden;display:flex;flex-direction:column;';setTimeout(scrollChat,60);}else{pg.style.display='block';pg.classList.add('active');scr.style.cssText='flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;';scr.scrollTop=0;}document.getElementById('tab-'+name).classList.add('active');}
@@ -470,10 +487,11 @@ function updateCD(){if(!S.provaDate)return;const diff=Math.ceil((new Date(S.prov
 function calcStreak(){if(!S.sessions.length)return 0;const dates=[...new Set(S.sessions.map(s=>new Date(s.date).toDateString()))].sort((a,b)=>new Date(b)-new Date(a));let streak=0,check=new Date();for(const d of dates){if(new Date(d).toDateString()===check.toDateString()){streak++;check.setDate(check.getDate()-1);}else break;}return streak;}
 function updateStats(){const st=calcStreak();document.getElementById('stS').textContent=S.sessions.length;document.getElementById('stH').textContent=Math.floor(S.totalMin/60)+'h';document.getElementById('stSt').textContent=st;document.getElementById('stN').textContent=st;}
 function updateGoal(){const today=new Date().toDateString();const done=S.sessions.filter(s=>new Date(s.date).toDateString()===today).reduce((a,s)=>a+s.minutes,0);const meta=S.metaMin||60;const pct=Math.min(100,Math.round((done/meta)*100));document.getElementById('gdone').textContent=done;document.getElementById('gtgt').textContent=meta;document.getElementById('gpct').textContent=pct+'%';const f=document.getElementById('gbf');f.style.width=pct+'%';f.className='gbf'+(pct>=100?' done':'');}
-const BANNERS=['<strong>Cora tem 4 anos.</strong> Ela não sabe ainda o que você está construindo pra ela agora. Cada sessão de hoje é a escola dela, a segurança dela, o sorriso dela.','Enquanto você não abre o material, o tempo da <strong>Cora</strong> passa. Ela não espera. O concurso também não.','A <strong>Cora</strong> vai crescer de qualquer forma. A questão é: em que tipo de vida? Você decide agora, Marcela.','Sabe o que a <strong>Cora</strong> vai lembrar quando crescer? Que a mãe dela não desistiu. Que ela estudou. Que passou.','Cada minuto estudado hoje é um tijolo na vida que a <strong>Cora</strong> vai ter. Só você pode colocar esses tijolos.'];
-const LETTERS=['"Mamãe, eu não sei o que é concurso. Mas eu sei que quando você estuda, você fica mais feliz. E quando você fica feliz, eu fico também."','"Mamãe, quando eu crescer, quero ser igual a você. Do jeito que você não desiste."','"Mamãe, você pode me contar uma história depois que você estudar? Pode ser?"','"Eu desenhei você hoje. Coloquei um sorriso grande. É assim que você vai ficar quando passar."','"Mamãe, a professora disse que a gente trabalha pra ajudar as pessoas. É isso que você vai fazer na SEFAZ?"'];
+const BANNERS=['<strong>Cora tem 4 anos.</strong> Ela não sabe ainda o que você está construindo pra ela agora. Cada sessão de hoje é a escola dela, a segurança dela, o sorriso dela.','Enquanto você não abre o material, o tempo da <strong>Cora</strong> passa. Ela não espera. O concurso também não.','A <strong>Cora</strong> vai crescer de qualquer forma. A questão é: em que tipo de vida? Você decide agora, Marcela.','Sabe o que a <strong>Cora</strong> vai lembrar quando crescer? Que a mãe dela não desistiu. Que ela estudou. Que passou.','Cada minuto estudado hoje é um tijolo na vida que a <strong>Cora</strong> vai ter. Só você pode colocar esses tijolos.','<strong>Cora dorme pensando em você.</strong> Porque você é tudo o que ela tem. Não desista dela. Não desista de você.','Você acha que o concurso é difícil? Tente explicar pra <strong>Cora</strong> por que a mãe dela desistiu. Isso sim é difícil.','<strong>Cora está assistindo.</strong> Não só o que você faz, mas o que você ensina dela. Mostre a ela que não se desiste.','Aquela vida que você sonha? Aquela segurança? Aquela paz? A <strong>Cora</strong> merece isso. E você também.','Você já parou pra pensar no abraço de <strong>Cora</strong> quando você contar que passou? Pois é. Estude por ele.'];
+const LETTERS=['"Mamãe, eu não sei o que é concurso. Mas eu sei que quando você estuda, você fica mais feliz. E quando você fica feliz, eu fico também."','"Mamãe, quando eu crescer, quero ser igual a você. Do jeito que você não desiste."','"Mamãe, você pode me contar uma história depois que você estudar? Pode ser?"','"Eu desenhei você hoje. Coloquei um sorriso grande. É assim que você vai ficar quando passar."','"Mamãe, a professora disse que a gente trabalha pra ajudar as pessoas. É isso que você vai fazer na SEFAZ?"','"Mamãe, você é a pessoa mais forte que eu conheço. Porque você nunca desiste. Mesmo quando fica cansada."','"Mamãe, eu tenho muito medo de você desistir. Mas acho que você é muito brava demais pra isso."','"Mamãe, quando você estuda, eu sinto que a gente fica mais perto. É estranho, mas é verdade."','"Mamãe, você sabe que eu fico feliz só de estar perto de você? Então estuda um pouco, mas não esquece de mim, tá?"','"Mamãe, o que você tá estudando é difícil? É sim. Mas você é mais difícil ainda de desistir. Eu tenho certeza."'];
 function updateCoraBanner(){document.getElementById('cbannerTx').innerHTML=BANNERS[S.sessions.length%BANNERS.length];}
 function rotateCoraLetter(){document.getElementById('coraLetter').textContent=LETTERS[new Date().getDate()%LETTERS.length];}
+function startCoraRotation(){setInterval(()=>{const idx=Math.floor(Date.now()/300000)%BANNERS.length;document.getElementById('ccora').innerHTML=LETTERS[idx];},300000);const idx=Math.floor(Date.now()/300000)%BANNERS.length;document.getElementById('ccora').innerHTML=LETTERS[idx];}
 function selD(m,el){selDur=m;document.querySelectorAll('.db').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');}
 function startSess(){const task=document.getElementById('taskInp').value.trim()||'Leitura + questões';beginTimer(selDur,task);go('timer');}
 function startCora(){beginTimer(5,'Por Cora — abrir o material');go('timer');}
