@@ -19,46 +19,46 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:#07090f; --sf:#0f1420; --s2:#161d2e; --bd:#1e2a42;
-  --ac:#f59e0b; --danger:#ef4444; --ok:#10b981;
-  --tx:#e8edf5; --m:#4a5a78; --m2:#8899bb; --cora:#f9a8d4;
-  --pad: clamp(16px, 4vw, 40px);
-  --gap: clamp(8px, 1.5vw, 16px);
-  --radius: clamp(10px, 1.5vw, 16px);
-  --fs-xs:   clamp(11px, 1.2vw, 13px);
-  --fs-sm:   clamp(13px, 1.4vw, 15px);
-  --fs-base: clamp(15px, 1.6vw, 17px);
-  --fs-md:   clamp(16px, 1.8vw, 19px);
-  --fs-lg:   clamp(18px, 2.2vw, 24px);
-  --fs-xl:   clamp(22px, 3vw, 32px);
-  --fs-2xl:  clamp(28px, 4vw, 42px);
-  --fs-timer:clamp(44px, 8vw, 72px);
-  --lh: 1.65;
+  --bg:#07090f; --sf:#0f1420; --s2:#161d2e; --bd:#1e2a42  !important;
+  --ac:#f59e0b; --danger:#ef4444; --ok:#10b981  !important;
+  --tx:#e8edf5; --m:#4a5a78; --m2:#8899bb; --cora:#f9a8d4  !important;
+  --pad: clamp(16px, 4vw, 40px)  !important;
+  --gap: clamp(8px, 1.5vw, 16px)  !important;
+  --radius: clamp(10px, 1.5vw, 16px)  !important;
+  --fs-xs:   clamp(11px, 1.2vw, 13px)  !important;
+  --fs-sm:   clamp(13px, 1.4vw, 15px)  !important;
+  --fs-base: clamp(15px, 1.6vw, 17px)  !important;
+  --fs-md:   clamp(16px, 1.8vw, 19px)  !important;
+  --fs-lg:   clamp(18px, 2.2vw, 24px)  !important;
+  --fs-xl:   clamp(22px, 3vw, 32px)  !important;
+  --fs-2xl:  clamp(28px, 4vw, 42px)  !important;
+  --fs-timer:clamp(44px, 8vw, 72px)  !important;
+  --lh: 1.65  !important;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { height: 100%; font-size: 16px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
-  background: var(--bg); color: var(--tx);
-  font-family: 'DM Sans', sans-serif;
-  font-size: var(--fs-base);
-  line-height: var(--lh);
-  height: 100%;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg); color: var(--tx)  !important;
+  font-family: 'DM Sans', sans-serif  !important;
+  font-size: var(--fs-base)  !important;
+  line-height: var(--lh)  !important;
+  height: 100%  !important;
+  -webkit-tap-highlight-color: transparent  !important;
+  -webkit-font-smoothing: antialiased  !important;
+  -moz-osx-font-smoothing: grayscale  !important;
 }
 body::before {
-  content: ''; position: fixed; inset: 0;
-  background: radial-gradient(ellipse 80% 40% at 50% 0%, rgba(245,158,11,.05), transparent 60%);
-  pointer-events: none; z-index: 0;
+  content: ''; position: fixed; inset: 0  !important;
+  background: radial-gradient(ellipse 80% 40% at 50% 0%, rgba(245,158,11,.05), transparent 60%)  !important;
+  pointer-events: none; z-index: 0  !important;
 }
 button { cursor: pointer; font-family: inherit; }
 textarea, input { font-family: inherit; font-size: var(--fs-base); }
 .shell {
-  position: relative; z-index: 1;
-  display: flex; flex-direction: column;
-  height: 100vh; height: 100dvh;
-  width: 100%;
+  position: relative; z-index: 1  !important;
+  display: flex; flex-direction: column  !important;
+  height: 100vh; height: 100dvh  !important;
+  width: 100%  !important;
 }
 .shell.night { --bg:#040507; --sf:#07090e; --s2:#0b101a; --bd:#101824; }
 .top { flex-shrink: 0; }
@@ -66,35 +66,35 @@ textarea, input { font-family: inherit; font-size: var(--fs-base); }
 .scroller::-webkit-scrollbar { width: 3px; }
 .scroller::-webkit-scrollbar-thumb { background: var(--bd); border-radius: 3px; }
 .hdr {
-  padding: clamp(10px,1.5vh,16px) var(--pad);
-  display: flex; justify-content: space-between; align-items: center;
-  border-bottom: 1px solid var(--bd);
+  padding: clamp(10px,1.5vh,16px) var(--pad)  !important;
+  display: flex; justify-content: space-between; align-items: center  !important;
+  border-bottom: 1px solid var(--bd)  !important;
 }
 .logo {
-  font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: var(--fs-sm); letter-spacing: .12em;
-  text-transform: uppercase; color: var(--ac);
+  font-family: 'Syne', sans-serif; font-weight: 800  !important;
+  font-size: var(--fs-sm); letter-spacing: .12em  !important;
+  text-transform: uppercase; color: var(--ac)  !important;
 }
 .logo span { color: var(--m2); font-weight: 400; }
 .hr { display: flex; align-items: center; gap: var(--gap); }
 .pill {
-  display: flex; align-items: center; gap: 5px;
-  background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.3);
-  border-radius: 20px; padding: 4px 12px;
-  font-size: var(--fs-sm); font-weight: 600; color: var(--ac);
+  display: flex; align-items: center; gap: 5px  !important;
+  background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.3)  !important;
+  border-radius: 20px; padding: 4px 12px  !important;
+  font-size: var(--fs-sm); font-weight: 600; color: var(--ac)  !important;
 }
 .ib {
-  background: none; border: 1px solid var(--bd); border-radius: 8px;
-  padding: 6px 10px; font-size: var(--fs-base); color: var(--m2);
-  transition: all .2s; line-height: 1;
+  background: none; border: 1px solid var(--bd); border-radius: 8px  !important;
+  padding: 6px 10px; font-size: var(--fs-base); color: var(--m2)  !important;
+  transition: all .2s; line-height: 1  !important;
 }
 .ib:hover { border-color: var(--ac); color: var(--ac); }
 .ib.on { border-color: var(--ok); color: var(--ok); }
 .cd {
-  margin: var(--gap) var(--pad) 0;
-  background: var(--sf); border: 1px solid var(--bd);
-  border-radius: var(--radius); padding: clamp(10px,1.5vh,16px) var(--pad);
-  display: flex; align-items: center; justify-content: space-between;
+  margin: var(--gap) var(--pad) 0  !important;
+  background: var(--sf); border: 1px solid var(--bd)  !important;
+  border-radius: var(--radius); padding: clamp(10px,1.5vh,16px) var(--pad)  !important;
+  display: flex; align-items: center; justify-content: space-between  !important;
 }
 .cdl .lbl { font-size: var(--fs-xs); color: var(--m); text-transform: uppercase; letter-spacing: .1em; }
 .cdl .num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: var(--fs-2xl); color: var(--ac); line-height: 1.1; }
@@ -104,14 +104,14 @@ textarea, input { font-family: inherit; font-size: var(--fs-base); }
 .crb { fill: none; stroke: var(--bd); stroke-width: 3; }
 .crf { fill: none; stroke: var(--ac); stroke-width: 3; stroke-linecap: round; transition: stroke-dashoffset 1s ease; }
 .crp {
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif; font-size: var(--fs-xs); font-weight: 700; color: var(--m2);
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center  !important;
+  font-family: 'Syne', sans-serif; font-size: var(--fs-xs); font-weight: 700; color: var(--m2)  !important;
 }
 .gb {
-  margin: calc(var(--gap)/2) var(--pad) 0;
-  background: var(--sf); border: 1px solid var(--bd);
-  border-radius: calc(var(--radius) * .75);
-  padding: clamp(8px,1.2vh,12px) var(--pad);
+  margin: calc(var(--gap)/2) var(--pad) 0  !important;
+  background: var(--sf); border: 1px solid var(--bd)  !important;
+  border-radius: calc(var(--radius) * .75)  !important;
+  padding: clamp(8px,1.2vh,12px) var(--pad)  !important;
 }
 .gbr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
 .gbl { font-size: var(--fs-sm); color: var(--m2); }
@@ -120,40 +120,40 @@ textarea, input { font-family: inherit; font-size: var(--fs-base); }
 .gbf { height: 100%; background: var(--ac); border-radius: 5px; transition: width .5s ease; }
 .gbf.done { background: var(--ok); }
 .tabs {
-  display: flex; margin: calc(var(--gap)/2) var(--pad) 0;
-  background: var(--sf); border: 1px solid var(--bd);
-  border-radius: calc(var(--radius) * .75); padding: 3px; gap: 2px;
+  display: flex; margin: calc(var(--gap)/2) var(--pad) 0  !important;
+  background: var(--sf); border: 1px solid var(--bd)  !important;
+  border-radius: calc(var(--radius) * .75); padding: 3px; gap: 2px  !important;
 }
 .tab {
-  flex: 1; padding: clamp(10px,1.5vh,14px) 6px;
-  background: none; border: none; border-radius: 6px;
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(13px, 1.5vw, 16px);
-  font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--m2); transition: all .2s; cursor: pointer;
+  flex: 1; padding: clamp(10px,1.5vh,14px) 6px  !important;
+  background: none; border: none; border-radius: 6px  !important;
+  font-family: 'Syne', sans-serif  !important;
+  font-size: clamp(13px, 1.5vw, 16px)  !important;
+  font-weight: 800; letter-spacing: .06em; text-transform: uppercase  !important;
+  color: var(--m2); transition: all .2s; cursor: pointer  !important;
 }
 .tab.active { background: var(--ac); color: #000; font-weight: 800; box-shadow: 0 2px 8px rgba(245,158,11,.3); }
 .page { display: none; padding: var(--pad) var(--pad) 40px; }
 .page.active { display: block; animation: fu .22s ease; }
 @media (max-width: 600px) {
   :root {
-    --tx: #ffffff;
-    --m2: #ffffff;
+    --tx: #ffffff  !important;
+    --m2: #ffffff  !important;
   }
 }
 #pg-coach { display: none; flex-direction: column; padding: 0; height: 100%; }
 #pg-coach.active { display: flex; }
 .card {
-  background: var(--sf); border: 1px solid var(--bd);
-  border-radius: var(--radius); padding: var(--pad); margin-bottom: var(--gap);
+  background: var(--sf); border: 1px solid var(--bd)  !important;
+  border-radius: var(--radius); padding: var(--pad); margin-bottom: var(--gap)  !important;
 }
 .ct { font-family: 'Syne', sans-serif; font-weight: 700; font-size: var(--fs-lg); margin-bottom: 6px; }
 .cs { font-size: var(--fs-sm); color: var(--m2); line-height: var(--lh); margin-bottom: 14px; }
 .cbanner {
-  background: linear-gradient(135deg, rgba(249,168,212,.07), rgba(245,158,11,.03));
-  border: 1px solid rgba(249,168,212,.18); border-radius: var(--radius);
-  padding: clamp(12px,2vh,18px) var(--pad); margin-bottom: var(--gap);
-  display: flex; gap: var(--gap);
+  background: linear-gradient(135deg, rgba(249,168,212,.07), rgba(245,158,11,.03))  !important;
+  border: 1px solid rgba(249,168,212,.18); border-radius: var(--radius)  !important;
+  padding: clamp(12px,2vh,18px) var(--pad); margin-bottom: var(--gap)  !important;
+  display: flex; gap: var(--gap)  !important;
 }
 .cbi { font-size: clamp(22px,3vw,32px); flex-shrink: 0; margin-top: 2px; }
 .cbt { font-size: var(--fs-base); color: var(--m2); line-height: var(--lh); }
@@ -169,28 +169,28 @@ textarea, input { font-family: inherit; font-size: var(--fs-base); }
 .dgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--gap); margin-bottom: 14px; }
 @media(min-width:600px) { .dgrid { grid-template-columns: repeat(6,1fr); } }
 .db {
-  padding: clamp(10px,1.5vh,16px) 6px; border-radius: calc(var(--radius)*.75);
-  border: 1.5px solid var(--bd); background: var(--s2); color: var(--m2);
-  font-family: 'Syne', sans-serif; font-weight: 700;
-  font-size: var(--fs-sm); transition: all .2s; text-align: center;
+  padding: clamp(10px,1.5vh,16px) 6px; border-radius: calc(var(--radius)*.75)  !important;
+  border: 1.5px solid var(--bd); background: var(--s2); color: var(--m2)  !important;
+  font-family: 'Syne', sans-serif; font-weight: 700  !important;
+  font-size: var(--fs-sm); transition: all .2s; text-align: center  !important;
 }
 .db small { display: block; font-size: var(--fs-xs); font-weight: 400; color: var(--m); margin-top: 2px; }
 .db.sel, .db:hover { border-color: var(--ac); background: rgba(245,158,11,.08); color: var(--ac); }
 .inp {
-  width: 100%; background: var(--s2); border: 1.5px solid var(--bd);
-  border-radius: calc(var(--radius)*.75); padding: clamp(10px,1.5vh,14px) clamp(12px,2vw,18px);
-  color: var(--tx); font-size: var(--fs-base); outline: none;
-  transition: border-color .2s; resize: none; margin-bottom: var(--gap);
+  width: 100%; background: var(--s2); border: 1.5px solid var(--bd)  !important;
+  border-radius: calc(var(--radius)*.75); padding: clamp(10px,1.5vh,14px) clamp(12px,2vw,18px)  !important;
+  color: var(--tx); font-size: var(--fs-base); outline: none  !important;
+  transition: border-color .2s; resize: none; margin-bottom: var(--gap)  !important;
 }
 .inp:focus { border-color: var(--ac); }
 .inp::placeholder { color: var(--m); }
 .btn {
-  display: block; width: 100%;
-  padding: clamp(12px,1.8vh,17px) clamp(14px,2vw,24px);
-  border-radius: calc(var(--radius)*.75); border: none;
-  font-family: 'Syne', sans-serif; font-weight: 700;
-  font-size: var(--fs-md); letter-spacing: .04em;
-  transition: all .2s; text-align: center;
+  display: block; width: 100%  !important;
+  padding: clamp(12px,1.8vh,17px) clamp(14px,2vw,24px)  !important;
+  border-radius: calc(var(--radius)*.75); border: none  !important;
+  font-family: 'Syne', sans-serif; font-weight: 700  !important;
+  font-size: var(--fs-md); letter-spacing: .04em  !important;
+  transition: all .2s; text-align: center  !important;
 }
 .btn+.btn { margin-top: var(--gap); }
 .bp { background: var(--ac); color: #07090f; }
@@ -202,11 +202,11 @@ textarea, input { font-family: inherit; font-size: var(--fs-base); }
 .bdanger { background: transparent; border: 1px solid var(--danger); color: var(--danger); }
 .hstep { display: flex; gap: var(--gap); margin-bottom: 14px; }
 .snum {
-  flex-shrink: 0; width: clamp(24px,3vw,32px); height: clamp(24px,3vw,32px); border-radius: 50%;
-  background: rgba(245,158,11,.1); border: 1.5px solid var(--ac);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: var(--fs-xs); color: var(--ac); margin-top: 3px;
+  flex-shrink: 0; width: clamp(24px,3vw,32px); height: clamp(24px,3vw,32px); border-radius: 50%  !important;
+  background: rgba(245,158,11,.1); border: 1.5px solid var(--ac)  !important;
+  display: flex; align-items: center; justify-content: center  !important;
+  font-family: 'Syne', sans-serif; font-weight: 800  !important;
+  font-size: var(--fs-xs); color: var(--ac); margin-top: 3px  !important;
 }
 .stt { font-size: var(--fs-base); font-weight: 600; color: var(--tx); margin-bottom: 3px; }
 .sdd { font-size: var(--fs-sm); color: var(--m2); line-height: var(--lh); }
@@ -221,9 +221,9 @@ textarea, input { font-family: inherit; font-size: var(--fs-base); }
 .subj-pct { font-size: var(--fs-sm); color: var(--m2); }
 .subj-btns { display: flex; gap: 6px; margin-top: 8px; }
 .subj-btn {
-  flex: 1; padding: 6px 4px; border-radius: 6px; border: 1px solid var(--bd);
-  background: none; font-size: var(--fs-sm); font-family: 'Syne', sans-serif;
-  font-weight: 700; color: var(--m2); transition: all .2s;
+  flex: 1; padding: 6px 4px; border-radius: 6px; border: 1px solid var(--bd)  !important;
+  background: none; font-size: var(--fs-sm); font-family: 'Syne', sans-serif  !important;
+  font-weight: 700; color: var(--m2); transition: all .2s  !important;
 }
 .subj-btn:hover { border-color: var(--ac); color: var(--ac); }
 .tctr { text-align: center; padding: 8px 0 16px; }
@@ -245,11 +245,11 @@ textarea, input { font-family: inherit; font-size: var(--fs-base); }
 .tbtns .btn { flex: 1; }
 .coach-top { display: flex; flex-direction: column; align-items: center; padding: clamp(10px,2vh,18px) var(--pad) clamp(8px,1.5vh,14px); border-bottom: 1px solid var(--bd); flex-shrink: 0; }
 .av {
-  width: clamp(52px,7vw,72px); height: clamp(52px,7vw,72px); border-radius: 50%;
-  background: linear-gradient(135deg, rgba(245,158,11,.2), rgba(249,168,212,.12));
-  border: 2px solid rgba(245,158,11,.4);
-  display: flex; align-items: center; justify-content: center;
-  font-size: clamp(24px,3.5vw,36px); margin-bottom: 6px; position: relative;
+  width: clamp(52px,7vw,72px); height: clamp(52px,7vw,72px); border-radius: 50%  !important;
+  background: linear-gradient(135deg, rgba(245,158,11,.2), rgba(249,168,212,.12))  !important;
+  border: 2px solid rgba(245,158,11,.4)  !important;
+  display: flex; align-items: center; justify-content: center  !important;
+  font-size: clamp(24px,3.5vw,36px); margin-bottom: 6px; position: relative  !important;
 }
 .av.spk::after { content: ''; position: absolute; inset: -5px; border-radius: 50%; border: 2px solid rgba(245,158,11,.5); animation: pr 1.2s ease infinite; }
 @keyframes pr { 0%{opacity:1;transform:scale(1)} 100%{opacity:0;transform:scale(1.3)} }
@@ -466,11 +466,11 @@ textarea, input { font-family: inherit; font-size: var(--fs-base); }
 
 <script>
 // BACKEND CONFIGURATION - RENDER + OPENAI
-const BACKEND_URL = 'https://coach-sefazba.onrender.com';
-const DEFAULT_SUBJS=[{name:'Português',pct:0},{name:'Raciocínio Lógico',pct:0},{name:'Direito Tributário',pct:0},{name:'Legislação SEFAZ',pct:0},{name:'Contabilidade',pct:0},{name:'Direito Administrativo',pct:0},{name:'Matemática Financeira',pct:0},{name:'Informática',pct:0}];
-let S={sessions:[],totalMin:0,provaDate:null,metaMin:60,notifOn:false,nightMode:false,chatHistory:[],subjects:JSON.parse(JSON.stringify(DEFAULT_SUBJS))};
-let T={dur:25,rem:1500,total:1500,running:false,paused:false,iv:null,pomo:0,task:'sessão de estudos'};
-let selDur=25,recognition=null,isListening=false,notifIv=null;
+const BACKEND_URL = 'https://coach-sefazba.onrender.com'  !important;
+const DEFAULT_SUBJS=[{name:'Português',pct:0},{name:'Raciocínio Lógico',pct:0},{name:'Direito Tributário',pct:0},{name:'Legislação SEFAZ',pct:0},{name:'Contabilidade',pct:0},{name:'Direito Administrativo',pct:0},{name:'Matemática Financeira',pct:0},{name:'Informática',pct:0}]  !important;
+let S={sessions:[],totalMin:0,provaDate:null,metaMin:60,notifOn:false,nightMode:false,chatHistory:[],subjects:JSON.parse(JSON.stringify(DEFAULT_SUBJS))}  !important;
+let T={dur:25,rem:1500,total:1500,running:false,paused:false,iv:null,pomo:0,task:'sessão de estudos'}  !important;
+let selDur=25,recognition=null,isListening=false,notifIv=null  !important;
 function init(){load();updateCD();updateStats();updateGoal();updateCoraBanner();rotateCoraLetter();startCoraRotation();document.getElementById('initT').textContent=hhmm();if(S.nightMode)applyNight(true);if(S.notifOn&&Notification.permission==='granted'){document.getElementById('notifBtn').classList.add('on');startNotifLoop();}renderSubjs();}
 function load(){try{const d=localStorage.getItem('coachMarcela6');if(d){const p=JSON.parse(d);S={...S,...p};if(!S.subjects||!S.subjects.length)S.subjects=JSON.parse(JSON.stringify(DEFAULT_SUBJS));}}catch(e){}}
 function save(){localStorage.setItem('coachMarcela6',JSON.stringify(S));}
@@ -479,16 +479,16 @@ function updateCD(){if(!S.provaDate)return;const diff=Math.ceil((new Date(S.prov
 function calcStreak(){if(!S.sessions.length)return 0;const dates=[...new Set(S.sessions.map(s=>new Date(s.date).toDateString()))].sort((a,b)=>new Date(b)-new Date(a));let streak=0,check=new Date();for(const d of dates){if(new Date(d).toDateString()===check.toDateString()){streak++;check.setDate(check.getDate()-1);}else break;}return streak;}
 function updateStats(){const st=calcStreak();document.getElementById('stS').textContent=S.sessions.length;document.getElementById('stH').textContent=Math.floor(S.totalMin/60)+'h';document.getElementById('stSt').textContent=st;document.getElementById('stN').textContent=st;}
 function updateGoal(){const today=new Date().toDateString();const done=S.sessions.filter(s=>new Date(s.date).toDateString()===today).reduce((a,s)=>a+s.minutes,0);const meta=S.metaMin||60;const pct=Math.min(100,Math.round((done/meta)*100));document.getElementById('gdone').textContent=Math.round(done/60*10)/10;document.getElementById('gtgt').textContent=Math.round(meta/60*10)/10;document.getElementById('gpct').textContent=pct+'%';const f=document.getElementById('gbf');f.style.width=pct+'%';f.className='gbf'+(pct>=100?' done':'');}
-const BANNERS=['<strong>Cora tem 4 anos.</strong> Ela não sabe ainda o que você está construindo pra ela agora. Cada sessão de hoje é a escola dela, a segurança dela, o sorriso dela.','Enquanto você não abre o material, o tempo da <strong>Cora</strong> passa. Ela não espera. O concurso também não.','A <strong>Cora</strong> vai crescer de qualquer forma. A questão é: em que tipo de vida? Você decide agora, Marcela.','Sabe o que a <strong>Cora</strong> vai lembrar quando crescer? Que a mãe dela não desistiu. Que ela estudou. Que passou.','Cada minuto estudado hoje é um tijolo na vida que a <strong>Cora</strong> vai ter. Só você pode colocar esses tijolos.','<strong>Cora dorme pensando em você.</strong> Porque você é tudo o que ela tem. Não desista dela. Não desista de você.','Você acha que o concurso é difícil? Tente explicar pra <strong>Cora</strong> por que a mãe dela desistiu. Isso sim é difícil.','<strong>Cora está assistindo.</strong> Não só o que você faz, mas o que você ensina dela. Mostre a ela que não se desiste.','Aquela vida que você sonha? Aquela segurança? Aquela paz? A <strong>Cora</strong> merece isso. E você também.','Você já parou pra pensar no abraço de <strong>Cora</strong> quando você contar que passou? Pois é. Estude por ele.'];
-const LETTERS=['"🎉 TESTE: Essa mensagem é de 3 em 3 minutos! Se você vê isso, o deploy funcionou!"','"TESTE - Mamãe, eu não sei o que é concurso. Mas eu sei que quando você estuda, você fica mais feliz. E quando você fica feliz, eu fico também."','"TESTE - Mamãe, quando eu crescer, quero ser igual a você. Do jeito que você não desiste."','"TESTE - Mamãe, você pode me contar uma história depois que você estudar? Pode ser?"','"TESTE - Eu desenhei você hoje. Coloquei um sorriso grande. É assim que você vai ficar quando passar."','"TESTE - Mamãe, a professora disse que a gente trabalha pra ajudar as pessoas. É isso que você vai fazer na SEFAZ?"','"TESTE - Mamãe, você é a pessoa mais forte que eu conheço. Porque você nunca desiste. Mesmo quando fica cansada."','"TESTE - Mamãe, eu tenho muito medo de você desistir. Mas acho que você é muito brava demais pra isso."','"TESTE - Mamãe, quando você estuda, eu sinto que a gente fica mais perto. É estranho, mas é verdade."','"TESTE - Mamãe, você sabe que eu fico feliz só de estar perto de você? Então estuda um pouco, mas não esquece de mim, tá?"','"TESTE - Mamãe, o que você tá estudando é difícil? É sim. Mas você é mais difícil ainda de desistir. Eu tenho certeza."'];
+const BANNERS=['<strong>Cora tem 4 anos.</strong> Ela não sabe ainda o que você está construindo pra ela agora. Cada sessão de hoje é a escola dela, a segurança dela, o sorriso dela.','Enquanto você não abre o material, o tempo da <strong>Cora</strong> passa. Ela não espera. O concurso também não.','A <strong>Cora</strong> vai crescer de qualquer forma. A questão é: em que tipo de vida? Você decide agora, Marcela.','Sabe o que a <strong>Cora</strong> vai lembrar quando crescer? Que a mãe dela não desistiu. Que ela estudou. Que passou.','Cada minuto estudado hoje é um tijolo na vida que a <strong>Cora</strong> vai ter. Só você pode colocar esses tijolos.','<strong>Cora dorme pensando em você.</strong> Porque você é tudo o que ela tem. Não desista dela. Não desista de você.','Você acha que o concurso é difícil? Tente explicar pra <strong>Cora</strong> por que a mãe dela desistiu. Isso sim é difícil.','<strong>Cora está assistindo.</strong> Não só o que você faz, mas o que você ensina dela. Mostre a ela que não se desiste.','Aquela vida que você sonha? Aquela segurança? Aquela paz? A <strong>Cora</strong> merece isso. E você também.','Você já parou pra pensar no abraço de <strong>Cora</strong> quando você contar que passou? Pois é. Estude por ele.']  !important;
+const LETTERS=['"🎉 TESTE: Essa mensagem é de 3 em 3 minutos! Se você vê isso, o deploy funcionou!"','"TESTE - Mamãe, eu não sei o que é concurso. Mas eu sei que quando você estuda, você fica mais feliz. E quando você fica feliz, eu fico também."','"TESTE - Mamãe, quando eu crescer, quero ser igual a você. Do jeito que você não desiste."','"TESTE - Mamãe, você pode me contar uma história depois que você estudar? Pode ser?"','"TESTE - Eu desenhei você hoje. Coloquei um sorriso grande. É assim que você vai ficar quando passar."','"TESTE - Mamãe, a professora disse que a gente trabalha pra ajudar as pessoas. É isso que você vai fazer na SEFAZ?"','"TESTE - Mamãe, você é a pessoa mais forte que eu conheço. Porque você nunca desiste. Mesmo quando fica cansada."','"TESTE - Mamãe, eu tenho muito medo de você desistir. Mas acho que você é muito brava demais pra isso."','"TESTE - Mamãe, quando você estuda, eu sinto que a gente fica mais perto. É estranho, mas é verdade."','"TESTE - Mamãe, você sabe que eu fico feliz só de estar perto de você? Então estuda um pouco, mas não esquece de mim, tá?"','"TESTE - Mamãe, o que você tá estudando é difícil? É sim. Mas você é mais difícil ainda de desistir. Eu tenho certeza."']  !important;
 function updateCoraBanner(){document.getElementById('cbannerTx').innerHTML=BANNERS[S.sessions.length%BANNERS.length];}
 function rotateCoraLetter(){document.getElementById('coraLetter').textContent=LETTERS[new Date().getDate()%LETTERS.length];}
 function startCoraRotation(){const rotate=()=>{const idx=Math.floor(Date.now()/180000)%LETTERS.length;document.getElementById('ccora').innerHTML=LETTERS[idx];};rotate();setInterval(rotate,180000);}
 function selD(m,el){selDur=m;document.querySelectorAll('.db').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');}
 function startSess(){const task=document.getElementById('taskInp').value.trim()||'Leitura + questões';beginTimer(selDur,task);go('timer');}
 function startCora(){beginTimer(5,'Por Cora — abrir o material');go('timer');}
-const TMSGS=[()=>'Material aberto. Um parágrafo de cada vez.',()=>'A Cora está aqui enquanto você constrói o futuro dela.',()=>'Cada questão resolvida é memória. Continua.',()=>'Agente de Tributos da SEFAZ-BA. É você, Marcela.',()=>'Travou na leitura? Abre o TEC. 3 questões. Agora.',()=>'Salvador te espera. Com badge, salário e orgulho.',()=>'Você já abriu. O mais difícil foi isso. Não para.',()=>'A Cora vai crescer. Você decide em que tipo de vida.',()=>'Não precisa ser perfeito. Precisa ser feito, Marcela.',()=>'Cada minuto agora é uma promessa cumprida pra Cora.'];
-let mIdx=0;
+const TMSGS=[()=>'Material aberto. Um parágrafo de cada vez.',()=>'A Cora está aqui enquanto você constrói o futuro dela.',()=>'Cada questão resolvida é memória. Continua.',()=>'Agente de Tributos da SEFAZ-BA. É você, Marcela.',()=>'Travou na leitura? Abre o TEC. 3 questões. Agora.',()=>'Salvador te espera. Com badge, salário e orgulho.',()=>'Você já abriu. O mais difícil foi isso. Não para.',()=>'A Cora vai crescer. Você decide em que tipo de vida.',()=>'Não precisa ser perfeito. Precisa ser feito, Marcela.',()=>'Cada minuto agora é uma promessa cumprida pra Cora.']  !important;
+let mIdx=0  !important;
 function beginTimer(mins,task){clearInterval(T.iv);T={...T,dur:mins,rem:mins*60,total:mins*60,running:true,paused:false,pomo:0,task};document.getElementById('tlbl').textContent=task;document.getElementById('rph').textContent='FOCO';document.getElementById('pauseBtn').textContent='⏸ Pausar';updateTimerUI();updatePDots();mIdx=Math.floor(Math.random()*TMSGS.length);setTMsg();T.iv=setInterval(tick,1000);}
 function tick(){if(T.paused)return;T.rem--;updateTimerUI();if(T.rem%300===0&&T.rem>0)setTMsg();if(T.rem<=0)onDone();}
 function setTMsg(){const el=document.getElementById('tmsg');const msg=TMSGS[mIdx%TMSGS.length]();mIdx++;const isCora=msg.includes('Cora')||msg.includes('dela')||msg.includes('vida')||msg.includes('promessa');el.className='tmsg'+(isCora?' cora':'');el.textContent=msg;}
@@ -501,20 +501,20 @@ function logSess(task,mins,partial){S.sessions.push({date:new Date().toISOString
 function renderSubjs(){const el=document.getElementById('subjGrid');if(!el)return;el.innerHTML=S.subjects.map((s,i)=>{const cls=s.pct>=100?'subj-card done':s.pct>0?'subj-card partial':'subj-card';const barCls=s.pct>=100?'subj-bar done-bar':'subj-bar';return `<div class="${cls}"><div class="subj-name">${s.name}</div><div class="subj-bar-wrap"><div class="${barCls}" style="width:${s.pct}%"></div></div><div class="subj-pct">${s.pct}%</div><div class="subj-btns"><button class="subj-btn" onclick="adjSubj(${i},-10)">−10%</button><button class="subj-btn" onclick="adjSubj(${i},10)">+10%</button><button class="subj-btn" onclick="adjSubj(${i},25)">+25%</button></div></div>`;}).join('');}
 function adjSubj(i,delta){S.subjects[i].pct=Math.min(100,Math.max(0,S.subjects[i].pct+delta));save();renderSubjs();}
 function resetSubjs(){if(confirm('Resetar progresso das matérias?')){S.subjects=JSON.parse(JSON.stringify(DEFAULT_SUBJS));save();renderSubjs();}}
-const CELEBS=[{em:'🔥',t:'Sessão concluída!',s:'Você fez, Marcela. O hábito está sendo construído agora.',c:'A Cora sorriu hoje porque você estudou.'},{em:'⚡',t:'Mais uma vitória!',s:'Consistência é o que separa quem passa. Você está no caminho.',c:'Cada sessão é uma promessa cumprida pra Cora.'},{em:'🏆',t:'Isso é aprovação!',s:'O candidato que passa não é o mais inteligente. É o mais consistente.',c:'A Cora vai ter a melhor versão de você.'},{em:'💛',t:'Por ela!',s:'Você não estudou só pra você hoje. Estudou pra vocês duas.',c:'E a Cora nem sabe ainda. Mas vai saber.'},{em:'🎯',t:'Na mosca!',s:'Agente de Tributos da SEFAZ-BA. Esse nome é seu, Marcela.',c:'Salvador te espera. A Cora te espera.'}];
+const CELEBS=[{em:'🔥',t:'Sessão concluída!',s:'Você fez, Marcela. O hábito está sendo construído agora.',c:'A Cora sorriu hoje porque você estudou.'},{em:'⚡',t:'Mais uma vitória!',s:'Consistência é o que separa quem passa. Você está no caminho.',c:'Cada sessão é uma promessa cumprida pra Cora.'},{em:'🏆',t:'Isso é aprovação!',s:'O candidato que passa não é o mais inteligente. É o mais consistente.',c:'A Cora vai ter a melhor versão de você.'},{em:'💛',t:'Por ela!',s:'Você não estudou só pra você hoje. Estudou pra vocês duas.',c:'E a Cora nem sabe ainda. Mas vai saber.'},{em:'🎯',t:'Na mosca!',s:'Agente de Tributos da SEFAZ-BA. Esse nome é seu, Marcela.',c:'Salvador te espera. A Cora te espera.'}]  !important;
 function showCeleb(){const c=CELEBS[Math.floor(Math.random()*CELEBS.length)];document.getElementById('cem').textContent=c.em;document.getElementById('ctit').textContent=c.t;document.getElementById('csub').textContent=c.s;document.getElementById('ccora').textContent='👧 '+c.c;document.getElementById('celeb').classList.add('show');speak(c.t+'. '+c.s);}
 function closeCeleb(){document.getElementById('celeb').classList.remove('show');go('home');updateCoraBanner();}
 function loadLog(){const el=document.getElementById('logWrap');if(!S.sessions.length){el.innerHTML='<div class="log-item" style="opacity:.5"><div class="lic">💡</div><div><div class="ltask">Nenhuma sessão ainda</div></div></div>';return;}el.innerHTML=[...S.sessions].reverse().map(s=>{const d=new Date(s.date);return `<div class="log-item"><div class="lic">${s.partial?'⚡':'✅'}</div><div><div class="ltask">${s.task}</div><div class="lmeta">${s.minutes} min${s.partial?' · parcial':''}</div><div class="ldate">${d.toLocaleDateString('pt-BR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}</div></div></div>`;}).join('');}
 function loadCfg(){if(S.provaDate)document.getElementById('cfgDate').value=S.provaDate;document.getElementById('cfgMeta').value=S.metaMin||60;document.getElementById('cfgS').textContent=S.sessions.length;document.getElementById('cfgM').textContent=S.totalMin;document.getElementById('cfgSt').textContent=calcStreak();renderNotifList();}
 function saveCfg(){S.provaDate=document.getElementById('cfgDate').value||null;S.metaMin=parseInt(document.getElementById('cfgMeta').value)||60;save();updateCD();updateGoal();alert('Salvo, Marcela!');}
 function resetAll(){if(confirm('Apagar todos os dados?')){S={sessions:[],totalMin:0,provaDate:null,metaMin:60,notifOn:false,nightMode:false,chatHistory:[],subjects:JSON.parse(JSON.stringify(DEFAULT_SUBJS))};save();updateStats();updateCD();updateGoal();updateCoraBanner();renderSubjs();alert('Dados apagados.');}}
-const NOTIFS=[{h:8,m:0,l:'08:00 — Cora saiu pra escola',msg:'Bom dia, Marcela! A Cora foi. Agora é a sua janela. Abre o material — antes de qualquer outra coisa.'},{h:9,m:0,l:'09:00 — Check-in',msg:'Como está o bloco de hoje, Marcela? Se travou na leitura, vai pro TEC. 3 questões. A Cora conta com esse tempo.'},{h:10,m:30,l:'10:30 — Meio da manhã',msg:'Ainda dá tempo de um bloco completo antes de buscar a Cora. Fecha o que começou ou abre agora.'},{h:13,m:0,l:'13:00 — Tarde livre',msg:'Marcela, bloco da tarde. Se a Cora está dormindo: abre o Estratégia. Esse momento é raro.'},{h:20,m:30,l:'20:30 — Cora dormiu?',msg:'Silêncio? Esse é o seu horário, Marcela. Abre o material. É agora.'},{h:22,m:0,l:'22:00 — Última chance',msg:'Não vai dormir sem estudar hoje, Marcela. 15 minutos. Por você. Por Cora.'}];
+const NOTIFS=[{h:8,m:0,l:'08:00 — Cora saiu pra escola',msg:'Bom dia, Marcela! A Cora foi. Agora é a sua janela. Abre o material — antes de qualquer outra coisa.'},{h:9,m:0,l:'09:00 — Check-in',msg:'Como está o bloco de hoje, Marcela? Se travou na leitura, vai pro TEC. 3 questões. A Cora conta com esse tempo.'},{h:10,m:30,l:'10:30 — Meio da manhã',msg:'Ainda dá tempo de um bloco completo antes de buscar a Cora. Fecha o que começou ou abre agora.'},{h:13,m:0,l:'13:00 — Tarde livre',msg:'Marcela, bloco da tarde. Se a Cora está dormindo: abre o Estratégia. Esse momento é raro.'},{h:20,m:30,l:'20:30 — Cora dormiu?',msg:'Silêncio? Esse é o seu horário, Marcela. Abre o material. É agora.'},{h:22,m:0,l:'22:00 — Última chance',msg:'Não vai dormir sem estudar hoje, Marcela. 15 minutos. Por você. Por Cora.'}]  !important;
 function renderNotifList(){const el=document.getElementById('notifList');if(!el)return;el.innerHTML=NOTIFS.map(n=>`<div class="nitem"><span style="font-size:var(--fs-base);color:var(--tx)">${n.l}</span><span style="font-size:var(--fs-sm);font-family:'Syne',sans-serif;font-weight:700;color:${S.notifOn?'var(--ok)':'var(--m)'}">${S.notifOn?'ON':'OFF'}</span></div>`).join('');}
 async function toggleNotif(){if(!('Notification' in window)){alert('Use o Chrome para notificações.');return;}if(S.notifOn){S.notifOn=false;save();document.getElementById('notifBtn').classList.remove('on');clearInterval(notifIv);notifIv=null;renderNotifList();return;}const p=await Notification.requestPermission();if(p!=='granted'){alert('Permissão negada.');return;}S.notifOn=true;save();document.getElementById('notifBtn').classList.add('on');startNotifLoop();renderNotifList();new Notification('Coach SEFAZ-BA ativado 🔥',{body:'Marcela, notificações ligadas. A Cora conta com isso.'});}
 function startNotifLoop(){clearInterval(notifIv);notifIv=setInterval(()=>{if(!S.notifOn){clearInterval(notifIv);return;}const n=new Date(),h=n.getHours(),m=n.getMinutes();for(const nt of NOTIFS){if(nt.h===h&&nt.m===m){new Notification('⏰ Marcela — por Cora',{body:nt.msg,requireInteraction:true});break;}}},60000);}
 function toggleNight(){S.nightMode=!S.nightMode;applyNight(S.nightMode);save();}
 function applyNight(on){document.getElementById('shell').className='shell'+(on?' night':'');document.getElementById('nightBtn').textContent=on?'☀️':'🌙';}
-const SYS=()=>`Você é um coach de concursos humano, direto e empático. Está ajudando MARCELA, que prepara para Agente de Tributos da SEFAZ-BA (Salvador, BA). ~7 meses para a prova. Método: leitura (Estratégia Concursos) + questões (TEC Concursos). Bloqueio: não consegue nem abrir o material. Filha: Cora, 4 anos. Maior motivação. Rotina: manhã livre quando Cora está na escola. REGRAS: Chame de Marcela. Use Cora para motivar. Direto, acolhedor, nunca genérico. Quando travada: ação mínima concreta. Se disser que vai estudar: "O que exatamente você vai abrir primeiro?" Máximo 3 parágrafos. Português brasileiro natural.`;
+const SYS=()=>`Você é um coach de concursos humano, direto e empático. Está ajudando MARCELA, que prepara para Agente de Tributos da SEFAZ-BA (Salvador, BA). ~7 meses para a prova. Método: leitura (Estratégia Concursos) + questões (TEC Concursos). Bloqueio: não consegue nem abrir o material. Filha: Cora, 4 anos. Maior motivação. Rotina: manhã livre quando Cora está na escola. REGRAS: Chame de Marcela. Use Cora para motivar. Direto, acolhedor, nunca genérico. Quando travada: ação mínima concreta. Se disser que vai estudar: "O que exatamente você vai abrir primeiro?" Máximo 3 parágrafos. Português brasileiro natural.`  !important;
 async function sendChat(){const inp=document.getElementById('cinp');const text=inp.value.trim();if(!text)return;inp.value='';inp.style.height='';addMsg(text,'user');S.chatHistory.push({role:'user',content:text});await getReply();}
 function ck(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendChat();}}
 function ar(el){el.style.height='';el.style.height=Math.min(el.scrollHeight,70)+'px';}
@@ -528,7 +528,7 @@ if(window.speechSynthesis){window.speechSynthesis.getVoices();window.speechSynth
 let finalTranscript='';function toggleMic(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){alert('Microfone não funcionou. Use Chrome/Edge.');return;}if(isListening){recognition.stop();return;}recognition=new SR();recognition.lang='pt-BR';recognition.continuous=false;recognition.interimResults=true;let interimTranscript='';recognition.onstart=()=>{finalTranscript='';interimTranscript='';isListening=true;document.getElementById('micBtn').classList.add('lst');document.getElementById('cinp').placeholder='🎤 Gravando... fale agora!';setCstat('gravando…');};recognition.onresult=e=>{interimTranscript='';for(let i=e.resultIndex;i<e.results.length;i++){const t=e.results[i][0].transcript;if(e.results[i].isFinal){finalTranscript+=t+' ';}else{interimTranscript+=t;}}const cinp=document.getElementById('cinp');cinp.value=finalTranscript+interimTranscript;if(interimTranscript){cinp.placeholder='🎤 '+interimTranscript;}};recognition.onerror=e=>{document.getElementById('cinp').placeholder='❌ Erro no microfone';stopMic();};recognition.onend=()=>{if(finalTranscript.trim()){document.getElementById('cinp').value=finalTranscript.trim();setTimeout(sendChat,200);}stopMic();};recognition.start();}
 function stopMic(){isListening=false;document.getElementById('micBtn').classList.remove('lst');setCstat('online');}
 function hhmm(){return new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});}
-init();
+init()  !important;
 </script>
 </body>
 </html>
